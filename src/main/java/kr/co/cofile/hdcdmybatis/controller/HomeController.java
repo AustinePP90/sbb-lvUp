@@ -36,4 +36,9 @@ public class HomeController {
     	model.addAttribute("board", board);
     	return "fetchHome";
     }
+    
+    @GetMapping("/fetchUser")
+    public String fetchUser() {
+    	return "fetchUser";
+    }
 }
