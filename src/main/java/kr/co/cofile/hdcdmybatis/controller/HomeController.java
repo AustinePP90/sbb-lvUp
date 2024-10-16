@@ -5,6 +5,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import kr.co.cofile.hdcdmybatis.domain.Board;
+
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
@@ -24,5 +26,13 @@ public class HomeController {
         model.addAttribute("serverDate", formatedDate);
 
         return "home";
+    }
+    
+    @GetMapping("/fetchHome")
+    public String fetchHome(Model model) {
+    	Board board = new Board("제목 테스트", "내용 테스트", "아무개");
+    	board.setId(1);
+    	model.addAttribute("board", board);
+    	return "fetchHome";
     }
 }
