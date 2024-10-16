@@ -1,5 +1,6 @@
 package kr.co.cofile.hdcdmybatis.domain;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 import lombok.*;
@@ -8,9 +9,9 @@ import lombok.*;
 @RequiredArgsConstructor
 @Getter
 @Setter
-@EqualsAndHashCode
-@ToString
-public class Board {
+@EqualsAndHashCode(of = { "title", "writer" })
+@ToString(exclude = "content")
+public class Board implements Serializable {
 	private static final long serialVersionID = 1L;
 
 	private int id;
