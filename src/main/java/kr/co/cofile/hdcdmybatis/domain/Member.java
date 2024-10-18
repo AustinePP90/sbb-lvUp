@@ -15,13 +15,13 @@ import lombok.ToString;
 @Setter
 @ToString
 public class Member {
-    @NotBlank
+    @NotBlank // 비어있으면 안 된다
     private String userId = "hongkd";
     
     private String password = "1234";
     
-    @NotBlank
-    @Size(max = 3)
+    @NotBlank // 비어있으면 안 된다
+    @Size(max = 3) // 최대 3자까지만 받겠다
     private String userName;
     
     private String email;

@@ -35,4 +35,9 @@ public class HomeController {
     public String registerForm() {
         return "registerForm";
     }
+    
+    @GetMapping("/testForm")
+    public String testForm() {
+        return "testForm";
+    }
 }
