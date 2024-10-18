@@ -1,0 +1,31 @@
+package kr.co.cofile.hdcdmybatis;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
+import org.springframework.stereotype.Component;
+
+@Aspect
+@Component
+public class SampleAspect {
+	
+	// * 모든 반환타입
+	// kr/co.cofile.hdmybatis. 대상 패키지
+	// *Greet Greet로 끝나는 모든 클래스
+	// .* 모든 메서드
+	// (..) 모든 인수값
+	@Before ("execution(* kr.co.cofile.hdcdmybatis.*Greet.*(..))")
+	public void beforeAdvice(JoinPoint joinPoint) {
+		System.out.println("=== Before Advice ===");
+		
+		Date today = new Date();
+		SimpleDateFormat sdf = new SimpleDateFormat("yyy/MM/dd");
+		System.out.println(sdf.format(today));
+		
+		System.out.println("Method :" + joinPoint.getSignature().getName());
+	}
+	
+}
