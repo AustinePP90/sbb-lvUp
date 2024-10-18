@@ -25,4 +25,14 @@ public class HomeController {
 
         return "home";
     }
+    
+    @GetMapping("/fetchUser")
+    public String fetchUser() {
+        return "fetchUser";
+    }
+    
+    @GetMapping("/registerForm")
+    public String registerForm() {
+        return "registerForm";
+    }
 }
