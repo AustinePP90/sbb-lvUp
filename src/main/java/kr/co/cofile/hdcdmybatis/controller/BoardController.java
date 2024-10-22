@@ -102,9 +102,9 @@ public class BoardController {
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
     
-    @ExceptionHandler(BoardNotFoundException.class)
-    public ResponseEntity<String> handleMyException(BoardNotFoundException e) {
-        return ResponseEntity.badRequest().body("AN ERROR ACCURRED : " + e.getMessage());
-    }
-  
+//    @ExceptionHandler(BoardNotFoundException.class)
+//    public ResponseEntity<String> handleMyException(BoardNotFoundException e) {
+//        return ResponseEntity.badRequest().body("AN ERROR ACCURRED : " + e.getMessage());
+//    }
+//  
 }

@@ -14,9 +14,8 @@ public class BoardServiceImpl implements BoardService {
 	
 	@Override
 	public Board read(Integer id) throws BoardNotFoundException {
-		
 		return boardMapper.getBoardById(id)
-				.orElseThrow(() -> new BoardNotFoundException("게시물 없엉 ㅠㅜ"));
+				.orElseThrow(() -> new BoardNotFoundException("게시물을 찾을 수 없어요!!!!!!"));
 	}
 
 }
