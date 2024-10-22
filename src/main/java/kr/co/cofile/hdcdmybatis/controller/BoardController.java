@@ -50,7 +50,7 @@ public class BoardController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Board> getBoard(@PathVariable int id) {
+    public ResponseEntity<Board> getBoard(@PathVariable("id") int id) {
         log.info("getBoard({})", id);
 
         Board board = boardService.read(id);
@@ -59,7 +59,7 @@ public class BoardController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<String> deleteBoard(@PathVariable int id) {
+    public ResponseEntity<String> deleteBoard(@PathVariable("id") int id) {
         log.info("deleteBoard({})", id);
 
         boardService.delete(id);
@@ -68,7 +68,7 @@ public class BoardController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Map<String, Object>> updateBoard(@PathVariable int id, @RequestBody Board board) {
+    public ResponseEntity<Map<String, Object>> updateBoard(@PathVariable("id") int id, @RequestBody Board board) {
         log.info("updateBoard({})", id);
         log.info(board.toString());
 
