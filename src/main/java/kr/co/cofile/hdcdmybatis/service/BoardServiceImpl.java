@@ -1,16 +1,17 @@
 package kr.co.cofile.hdcdmybatis.service;
 
-import kr.co.cofile.hdcdmybatis.domain.Board;
-import kr.co.cofile.hdcdmybatis.exception.BoardNotFoundException;
-import kr.co.cofile.hdcdmybatis.exception.BoardRegistrationException;
-import kr.co.cofile.hdcdmybatis.mapper.BoardMapper;
-import lombok.extern.slf4j.Slf4j;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import kr.co.cofile.hdcdmybatis.domain.Board;
+import kr.co.cofile.hdcdmybatis.exception.BoardNotFoundException;
+import kr.co.cofile.hdcdmybatis.exception.BoardRegistrationException;
+import kr.co.cofile.hdcdmybatis.mapper.BoardMapper;
+import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Service

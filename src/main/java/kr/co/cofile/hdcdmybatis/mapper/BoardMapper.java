@@ -10,6 +10,7 @@ import java.util.Optional;
 
 @Mapper
 public interface BoardMapper {
+	// Optional -> null이면 orElseThrow()로 예외를 발생시킴 
     Optional<Board> getBoardById(Integer id);
     List<Board> getAllBoards();
     // 성공 1, 실패 0
