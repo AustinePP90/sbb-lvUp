@@ -36,20 +36,9 @@ public class SecurityConfig {
         return http.build();
     }
 
-    // 테스트용 인메모리 사용자 추가
-    @Bean
-    public UserDetailsService userDetailsService() {
-        UserDetails user = User.builder()
-                .username("test0")
-                .password(passwordEncoder().encode("1234"))
-                .roles("USER")
-                .build();
-
-        return new InMemoryUserDetailsManager(user);
-    }
-
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
+    
 }
